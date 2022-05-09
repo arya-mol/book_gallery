@@ -1,0 +1,29 @@
+{%extends 'custbase.html'%}
+{%block body_block%}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="col-3">
+        <img src="{{}}" alt="" width="100%" height="200px">
+    </div>
+    <div class="col-3">
+        <div class="card-body">
+            <h5 class="card-title">{{request.user}}</h5>
+            <h5 class="card-title">{{request.user.email}}</h5>
+            <h5 class="card-title">{{request.user.customer.address}}</h5>
+            <h5 class="card-title">{{request.user.customer.phn_no}}</h5>
+            <h5 class="card-title">{{request.user.customer.profile_pic}}</h5>
+        </div>
+    </div>
+    <div class="col-4"></div>
+
+</div>
+{%endblock%}
+
+
+
+
+
+
+
+

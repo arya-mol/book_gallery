@@ -1,0 +1,28 @@
+{%extends "base.html"%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <table class="table">
+                <tr>
+                    <th>ItemName</th>
+                    <th>User</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+                {%for order in n_orders%}
+                <tr>
+                    <td>{{order.item.book_name}}</td>   1`W
+                    <td>{{order.user}}</td>
+                    <td>{{order.date}}</td>
+                    <td>
+                        <a href="{%url 'orderdetail' order.id%}" class="btn btn_dark">View</a>
+                        <a href="{%url 'orderprocess' order.id%}" class="btn btn_primary">Process</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </div>
+</div>
+{%endblock%}

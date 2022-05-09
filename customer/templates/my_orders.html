@@ -1,0 +1,38 @@
+{%extends 'custbase.html'%}
+{%block body_block%}
+<div class="card text-center">
+    <div class="card-header">
+        Your Orders
+    </div>
+    {%for order in orders%}
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="{{order.item.image.url}}" alt="" width="100%" height="200px">
+                    </div>
+                    <div class="col-4">
+                        <p>{{order.item.book_name}}</p>
+                        <p>{{order.status}}</p>
+                    </div>
+                    <div class="col-4">
+                        {%if order.status != "cancel" %}
+                        <a href="{%url 'cancelorder' order.id %}" class="btn btn-outline-danger">CancellOrder</a>
+                        {%endif%}
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+         <div class="col-1"></div>
+        {%endfor%}
+    </div>
+    {%endblock%}
+    <div class="card-footer text-muted">
+            2 days ago
+        </div>
+    </div>
+
